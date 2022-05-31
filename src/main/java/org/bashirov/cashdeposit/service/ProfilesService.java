@@ -1,4 +1,4 @@
-package org.bashirov.cashdeposit.repository;
+package org.bashirov.cashdeposit.service;
 
 import org.bashirov.cashdeposit.entity.Profiles;
 import org.bashirov.cashdeposit.entity.Users;

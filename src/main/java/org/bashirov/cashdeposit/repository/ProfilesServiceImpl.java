@@ -1,7 +1,7 @@
 package org.bashirov.cashdeposit.repository;
 
 import org.bashirov.cashdeposit.entity.Profiles;
-import org.bashirov.cashdeposit.entity.Users;
+import org.bashirov.cashdeposit.service.ProfilesService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,11 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Service
-public class ProfilesServiceImpl implements ProfilesService{
+public class ProfilesServiceImpl implements ProfilesService {
 
     @Autowired
     private SessionFactory sessionFactory;

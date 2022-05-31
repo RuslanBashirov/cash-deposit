@@ -2,7 +2,7 @@ package org.bashirov.cashdeposit.controller;
 
 import org.bashirov.cashdeposit.config.jwt.JwtProvider;
 import org.bashirov.cashdeposit.entity.Users;
-import org.bashirov.cashdeposit.repository.UsersService;
+import org.bashirov.cashdeposit.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -57,7 +57,7 @@ public class UsersController {
         return dao.readUsersByPhoneValue(phoneValue, page);
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json")
+    @PostMapping(value = "/create", produces = "application/json")
     public String create(@RequestBody @Valid Users newUser, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return bindingResult.getAllErrors().toString();
@@ -67,7 +67,7 @@ public class UsersController {
         return jwtProvider.generateToken(newUser.getId(), "USER");
     }
 
-    @RequestMapping(value = "/{userId}", method = RequestMethod.PATCH, produces = "application/json")
+    @PatchMapping(value = "/{userId}", produces = "application/json")
     public String update(@RequestBody @Valid Users updatedUser, BindingResult bindingResult, @PathVariable long userId){
         if (bindingResult.hasErrors()) {
             return bindingResult.getAllErrors().toString();

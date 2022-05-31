@@ -3,6 +3,7 @@ package org.bashirov.cashdeposit.repository;
 import lombok.extern.slf4j.Slf4j;
 import org.bashirov.cashdeposit.entity.Phones;
 import org.bashirov.cashdeposit.entity.Users;
+import org.bashirov.cashdeposit.service.UsersService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
